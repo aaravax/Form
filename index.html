@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style = "background: linear-gradient(to bottom, #3366cc, #cc3366)">
+    
+    <h2 id = "title">Aarav's Chess club</h2>
+    <br>
+    <h3>Fill out the form to enroll in this class.</h3>
+    <br>
+    <h4>Please choose how many sessions you would like to take</h4>
+    <input type = "radio"><h5>Six sessions</h5>
+    <input type = "radio"><h5>Twelve sessions</h5>
+    <input type = "radio"><h5>Twenty-four sessions</h5>
+    <br>
+    <h4>Please put your username</h4>
+    <br>
+    <input type = "text"  id = "username" required>
+    <br>
+    <h4>Please put your password</h4>
+    <input type= "password" id = "password" required>
+    <br>
+    <h5>Please put your email so that staff members can contact you about class infromation</h5>
+    <input type = "email" id = "email" required>
+    <br>
+    <h4>Please enter your phone number</h4>
+    <br>
+    <input type = "number" id = "number">
+    <br>
+    <h4>Please re-enter your password to confirm</h4>
+    <br>
+    <input type = "password" id = "password2">
+    <br>
+    <button onclick="validate()">Submit</button>
+    <br>
+    <h1 id = "thx"></h1>
+</body>
+<script>
+document.getElementById("title").style.textAlign = "center"
+document.getElementById("title").style.backgroundColor= ""
+
+
+
+ 
+
+ function validate(){
+    
+var username = document.getElementById("username").value 
+var password = document.getElementById("password").value
+ var email= document.getElementById("email").value
+ var number = document.getElementById("number").value
+ var password2 = document.getElementById("password2").value
+
+ if (username == null || username == ''){
+     alert("Please enter your username")
+ }
+ if (password == null || password == ''){
+     alert("Please enter your password")
+ }
+ if (email == null || email == ''){
+     alert("Please enter your email")
+ }
+ if (password.length < 6){
+     alert("Your password must contain more than 6 characters!")
+ }
+ var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+ console.log(email.match(mailformat))
+if (email.match(mailformat) == null){
+alert("You need to enter a valid email!")
+}
+if(number.length < 10 || number.length > 10){
+    alert("Your phone number must have exactly 10 digits!")
+}
+if(password != password2){
+    alert("Your password is incorrect; Please re-enter the correct password for both boxes")
+}
+
+
+    
+
+ 
+//  console.log(username)
+//  console.log(password)
+//  console.log(email)
+ }
+</script>
+</html>
